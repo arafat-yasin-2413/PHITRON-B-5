@@ -1,4 +1,5 @@
-for(int i=0; i<lenA+lenB; i++)
-    {
-        printf("%c",new_st[i]);
-    }
+or(int i=0; i<lenA+lenB; i++)
+    // {
+    //     printf("%c",new_st[i]);
+    // }
+    // printf("\n");
