@@ -68,6 +68,6 @@ int main()
     int nCr = (N_fact(n)) / ((R_fact(r))*(N_R_fact(n-r)));
     printf("nCr = %d\n",nCr);
 
-    
+    //
     return 0;
 }
