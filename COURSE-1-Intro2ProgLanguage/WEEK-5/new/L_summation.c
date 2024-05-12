@@ -4,11 +4,11 @@
 #include<math.h>
 #include<stdlib.h>
 
-void fun(int ar[], int n, int i)
+int fun(int ar[], int n, int i)
 {
-    if(i == n) return; 
-    
-    printf("%d\n",fun(ar,n,i+1));
+    if(i == n) return 0; 
+    int s = fun(ar,n,i+1);
+    return s+ar[i];
 }
 
 int main()
@@ -21,7 +21,9 @@ int main()
         scanf("%d",&ar[i]);
 
     int res = fun(ar,n,0);
-    printf("sum is = %d\n",res); 
-    
+    printf("sum is = %d\n",res);
+
+
+        
     return 0;
 }
