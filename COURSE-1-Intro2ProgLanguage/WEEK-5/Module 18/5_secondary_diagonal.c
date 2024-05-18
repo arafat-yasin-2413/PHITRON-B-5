@@ -52,7 +52,7 @@ int main()
 
     else 
     {
-        printf("Not Diagonal\n");
+        printf("Not Secondary Diagonal\n");
     }
 
 

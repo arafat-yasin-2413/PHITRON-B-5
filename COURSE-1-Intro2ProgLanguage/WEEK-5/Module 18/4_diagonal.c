@@ -1,61 +1,58 @@
-#include<stdio.h>
-#include<limits.h>
-#include<string.h>
-#include<math.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <limits.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
 int main()
 {
- 
-    int row,col;
-    scanf("%d%d",&row,&col);
 
+    int row, col;
+    scanf("%d%d", &row, &col);
 
-    
     int ar[row][col];
-    for(int i=0; i<row; i++)
+    for (int i = 0; i < row; i++)
     {
-        for(int j=0; j<col; j++)
+        for (int j = 0; j < col; j++)
         {
-            scanf("%d",&ar[i][j]);
+            scanf("%d", &ar[i][j]);
         }
     }
 
     int flag = 1;
-    if(row!=col)
+    if (row != col)
     {
         flag = 0;
     }
 
-
-    
-    for(int i=0; i<row; i++)
+    else
     {
-        for(int j=0; j<col; j++)
+        for (int i = 0; i < row; i++)
         {
-            if(i==j)
+            for (int j = 0; j < col; j++)
             {
-                continue;
-            }
-            if(ar[i][j]!=0)
-            {
-                flag = 0;
+                if (i == j)
+                {
+                    continue;
+                }
+                if (ar[i][j] != 0)
+                {
+                    flag = 0;
+                }
             }
         }
     }
 
-    printf("%d\n",flag);
+    printf("%d\n", flag);
 
-    if(flag == 1)
+    if (flag == 1)
     {
         printf("Primary Diagonal\n");
     }
 
-    else 
+    else
     {
         printf("Not Diagonal\n");
     }
-
-
 
     return 0;
 }
