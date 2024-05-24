@@ -20,7 +20,7 @@ int main()
 
     cin.getline(a.name,100);
     cin >> a.roll >> a.cgpa;
-    getchar();
+    // getchar();
     cin.getline(b.name,100);
     cin >> b.roll >> b.cgpa;
 
