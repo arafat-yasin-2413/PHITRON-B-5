@@ -12,7 +12,7 @@ int main()
         cin>>ar[i];
 
     sort(ar,ar+n);
-    //printint asc
+    //printing asc
     for(int i=0; i<n; i++)
         cout<<ar[i]<<" ";
     cout<<endl;
