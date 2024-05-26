@@ -1,67 +1,45 @@
-#include <bits/stdc++.h>
-#include <iostream>
+#include<bits/stdc++.h>
 using namespace std;
-int main()
 
+
+// Solved By AMS vaiya. 
+int isLucky(int n)
 {
-    // number input
-    // convert the number into a string
-    // iterate over the string if(4 or 7 then Lucky)
-
-    int a, b;
-    cin >> a >> b;
-
-    int count = 0;
-    for (int i = a; i <= b; i++)
+    while(n!=0)
     {
-        int n = i;
-        // cin >> n;
-
-        string st;
-        while (n != 0)
+        int digit = n%10;
+        n = n/10;
+        // My brain didn't think this. LOL. I had gone for string approach.
+        // But this is Easy and Convenient
+        if(digit != 4 && digit!=7)
         {
-            int d = n % 10;
-            n = n / 10;
-            char x = '0' + d;
-            st += x;
+            return 0;
         }
+    }
+    return 1;
+}
 
-        // cout << st << endl;
+int main()
+{
+    int a, b; 
+    cin>> a>>b;
 
-        int flag = 0;
-        for (int i = 0; i < st.size(); i++)
+    int flag = 0;
+    for(int i=a; i<=b; i++)
+    {
+        int found_lucky = isLucky(i);
+        if(found_lucky == 1)
         {
-            if (st[i] - '0' == 4 || st[i] - '0' == 7)
-            {
-                continue;
-            }
-
-            else
-            {
-                flag = 1;
-            }
-        }
-
-        // cout << flag << endl;
-        if (flag == 1)
-        {
-            count++;
-            continue;
-        }
-
-        else
-        {
-            cout << st << " ";
+            cout<<i<<" ";
+            flag = 1;
         }
     }
 
-    // cout<<"Loop cholse = "<<b-a+1 <<" times "<<endl;
-    // cout<<"count = "<<count<<endl;
-
-    if (count == b - a + 1)
+    if (flag == 0)
     {
-        cout << -1 << endl;
+        cout<<"-1";
     }
+
 
     return 0;
 }
