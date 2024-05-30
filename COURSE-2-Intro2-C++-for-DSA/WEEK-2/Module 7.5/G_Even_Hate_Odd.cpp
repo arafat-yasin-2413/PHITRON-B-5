@@ -47,10 +47,10 @@ int main()
                 operation = 0;
                 cout << operation << endl;
             }
-
+//
             else if (odd != even)
             {
-                operation = abs(odd - even);
+                operation = abs(odd - even)/2;
                 cout << operation << endl;
             }
         }
