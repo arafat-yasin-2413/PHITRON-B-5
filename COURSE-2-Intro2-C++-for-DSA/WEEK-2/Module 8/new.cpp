@@ -8,14 +8,8 @@ int main()
 
     // cout << s << endl;
 
-    // int position = s.find(" Jessica ");
-    // cout << position << endl;
-
     int flag = 0;
-    // if (position != -1)
-    // {
-    //     flag = 1;
-    // }
+
     if (s.size() == 7)
     {
         int position = s.find("Jessica");
@@ -37,26 +31,32 @@ int main()
     else
     {
         int temp_pos = s.find("Jessica");
-
-        if (s[temp_pos - 1] == ' ' && s[s.size() - 1] == '\0') // Ratul Rahat Jessica
+        if (temp_pos != -1)
         {
-            int position = s.find(" Jessica");
-            if (position != -1)
+            if (s[temp_pos - 1] == ' ' && s[s.size() - 1] == '\0') // Ratul Rahat Jessica
             {
-                flag = 1;
+                int position = s.find(" Jessica");
+                if (position != -1)
+                {
+                    flag = 1;
+                }
+            }
+
+            else if (s[temp_pos - 1] == ' ' && s[temp_pos + 7] == ' ') // Ratul Jessica Rahat
+            {
+                int position = s.find(" Jessica ");
+                if (position != -1)
+                {
+                    flag = 1;
+                }
+            }
+
+            else if (s[temp_pos - 1] == ' ' && s[temp_pos + 7] != ' ') // Ratul Jessicabcd Munna
+            {
+                flag = 0;
             }
         }
-
-        else if (s[temp_pos - 1] == ' ' && s[temp_pos + 7] == ' ') // Ratul Jessica Rahat
-        {
-            int position = s.find(" Jessica ");
-            if (position != -1)
-            {
-                flag = 1;
-            }
-        }
-
-        else // Ratul Jessicabcd Munna
+        else if(temp_pos == -1)
         {
             flag = 0;
         }
