@@ -83,14 +83,15 @@ using namespace std;
 
 int main()
 {
-    char s[1001];
-    // getline(cin,s);
-    cin.getline(s,1001);
+    string s;
+    while (getline(cin, s))
+    {
+        cout << s << endl;
+        int temp_pos = s.find("Jessica");
+        cout << "temp pos = " << temp_pos << endl;
+    }
 
-    cout << s << endl;
-
-    // int temp_pos = s.find("Jessica");
-    // cout << "temp pos = " << temp_pos << endl;
+    cout << "outside of while loop : " << s << endl;
 
     return 0;
 }
