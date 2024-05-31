@@ -8,75 +8,67 @@ int main()
 
     // cout << s << endl;
 
-    int position = s.find("Jessica");
+    // int position = s.find(" Jessica ");
     // cout << position << endl;
 
     int flag = 0;
-    if (position != -1)
+    // if (position != -1)
+    // {
+    //     flag = 1;
+    // }
+    if (s.size() == 7)
     {
-        // jodi shurutei Jessica thake
-        if (s[0] == 'J') // Jessica Rifat
-        {
-            if (s.size() > 7) // Jessica Rifat
-            {
-                if (s[position + 7] == ' ')
-                {
-                    flag = 1;
-                    // cout<<"Jessica paisi"<<endl;
-                    // cout << "eikhane aschi 1" << endl;
-                }
-            }
-            else if (s.size() == 7) // Jessica
-            {
-                if (s == "Jessica")
-                {
-                    flag = 1;
-                    // cout<<"Paisi"<<endl;
-                    // cout << "eikhane aschi 2" << endl;
-                }
-            }
-        }
-
-        // jodi ekdom seshe Jessica thake
-        else if (s[position + 6] == 'a')
-        {
-            // char x3 = s[position + 6];
-            if (position + 6 == s.size() - 1)
-            {
-                flag = 1;
-                // cout << "eikhane aschi 3" << endl;
-            }
-        }
-
-        // Jessicar ashe pashe jodi kichu thake
-        else if (s[position - 1] == ' ' && s[position + 7] == ' ')
+        int position = s.find("Jessica");
+        if (position != -1)
         {
             flag = 1;
-            // cout << "eikhane aschi 4" << endl;
         }
+    }
 
-        else if (s[position - 1] != ' ' && s[position + 7] != ' ')
+    else if (s[0] == 'J')
+    {
+        int position = s.find("Jessica ");
+        if (position != -1)
         {
-            char x1 = s[position - 1];
-            char x2 = s[position + 7];
-            cout << "x1 = " << x1 << endl;
-            cout << "x2 = " << x2 << endl;
-            // cout << "eikhane aschi 5" << endl;
-            if ((x1 >= 'a' && x1 <= 'z') or (x1 >= 'A' && x2 <= 'Z'))
+            flag = 1;
+        }
+    }
+
+    else
+    {
+        int temp_pos = s.find("Jessica");
+
+        if (s[temp_pos - 1] == ' ' && s[s.size() - 1] == '\0') // Ratul Rahat Jessica
+        {
+            int position = s.find(" Jessica");
+            if (position != -1)
             {
-                flag = 0;
-                // cout << "eikhane aschi 6" << endl;
+                flag = 1;
             }
         }
+
+        else if (s[temp_pos - 1] == ' ' && s[temp_pos + 7] == ' ') // Ratul Jessica Rahat
+        {
+            int position = s.find(" Jessica ");
+            if (position != -1)
+            {
+                flag = 1;
+            }
+        }
+
+        else // Ratul Jessicabcd Munna
+        {
+            flag = 0;
+        }
     }
 
-    if (flag == 1)
-    {
-        cout << "YES" << endl;
-    }
-    else if (flag == 0)
+    if (flag == 0)
     {
         cout << "NO" << endl;
+    }
+    else
+    {
+        cout << "YES" << endl;
     }
 
     return 0;
