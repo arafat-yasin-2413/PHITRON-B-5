@@ -3,22 +3,21 @@ using namespace std;
 
 int main()
 {
-    double x, n;
+    long long int x, n;
     cin >> x >> n;
 
-    
-
-    double result = 0;
-
-    for (int i = 2; i <= n; i++)
+    long long int res = 0;
+    for (int i = 2; i <= n; i += 2)
     {
-        if (i % 2 == 0)
+        long long int mult = 1;
+        for (int j = 1; j <= i; j++)
         {
-            double power=i;
-            result += pow(x, power);
+            mult = mult * x;
         }
+        res += mult;
     }
-    cout << result << endl;
+
+    cout << res << endl;
 
     return 0;
 }
