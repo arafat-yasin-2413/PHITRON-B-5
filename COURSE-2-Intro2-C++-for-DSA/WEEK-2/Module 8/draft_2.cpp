@@ -1,4 +1,3 @@
-/*
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -22,7 +21,8 @@ int main()
 
     else if (s[0] == 'J')
     {
-        int position = s.find("Jessica ");
+        int position = s.find(" Jessica ");
+        cout << "Jessica paisi 22 no line" << position << endl;
         if (position != -1)
         {
             flag = 1;
@@ -76,8 +76,7 @@ int main()
     return 0;
 }
 
-*/
-
+/*
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -95,6 +94,8 @@ int main()
 
     return 0;
 }
+
+*/
 
 /*
 hints

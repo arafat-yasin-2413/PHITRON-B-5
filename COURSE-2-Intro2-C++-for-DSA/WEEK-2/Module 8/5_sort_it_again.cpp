@@ -1,48 +1,32 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Student
-{
-public:
-    string name;
-    int cls;
-    char section;
-    int id;
-    int math_marks;
-    int eng_marks;
-};
-
-bool cmp(Student a, Student b)
-{
-    if (a.eng_marks != b.eng_marks)
-    {
-        return a.eng_marks > b.eng_marks;
-    }
-    else if (a.eng_marks == b.eng_marks)
-    {
-        return a.math_marks > b.math_marks;
-    }
-    else if(a.math_marks == b.math_marks)
-    {
-        return a.id < b.id;
-    }
-}
 int main()
 {
-    int n;
-    cin >> n;
+    string s;
+    getline(cin, s);
 
-    Student ar[n];
-    for (int i = 0; i < n; i++)
+    // cout << s << endl;
+    stringstream ss(s);
+
+    string x = "Jessica";
+    string word;
+    int flag = 0;
+    while (ss >> word)
     {
-        cin >> ar[i].name >> ar[i].cls >> ar[i].section >> ar[i].id >> ar[i].math_marks >> ar[i].eng_marks;
+        // cout << word << endl;
+        if (word == x)
+        {
+            flag = 1;
+        }
     }
-
-    sort(ar, ar + n, cmp);
-
-    for (int i = 0; i < n; i++)
+    if (flag == 1)
     {
-        cout << ar[i].name << " " << ar[i].cls << " " << ar[i].section << " " << ar[i].id << " " << ar[i].math_marks << " " << ar[i].eng_marks << endl;
+        cout << "YES" << endl;
+    }
+    else
+    {
+        cout << "NO" << endl;
     }
 
     return 0;
