@@ -12,43 +12,52 @@ public:
     int eng_marks;
 };
 
+/*
+eng boro kina boro hoile true
+false
+else
+math mark niye kaj korbo
+
+else
+math er choto boro check
+a id choto kina , chto hoile
+
+
+*/
+
 bool cmp(Student a, Student b)
 {
-   
-    if(a.eng_marks == b.eng_marks)
+    if (a.eng_marks > b.eng_marks)
+    {
+        return true;
+    }
+    else if (a.eng_marks < b.eng_marks)
+    {
+        return false;
+    }
+    else
     {
         if (a.math_marks > b.math_marks)
+        {
             return true;
+        }
         else
+        {
             return false;
-    }    
-
-    if(a.math_marks == b.math_marks)
-    {
-        if(a.id < b.id)
-            return true;
-        else
-            return false;
+        }
     }
 
-    if(a.eng_marks > b.eng_marks)
-        return true;
-    else
-        return false;
-
-
-    // if (a.eng_marks != b.eng_marks)
-    // {
-    //     return a.eng_marks > b.eng_marks;
-    // }
-    // else if (a.eng_marks == b.eng_marks)
-    // {
-    //     return a.math_marks > b.math_marks;
-    // }
-    // else if(a.math_marks == b.math_marks)
-    // {
-    //     return a.id < b.id;
-    // }
+    if (a.math_marks == b.math_marks)
+    {
+        if (a.id < b.id)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }
 int main()
 {
