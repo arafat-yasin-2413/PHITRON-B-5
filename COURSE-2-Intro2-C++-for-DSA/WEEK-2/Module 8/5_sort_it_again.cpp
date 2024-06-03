@@ -50,8 +50,8 @@ bool cmp(Student a, Student b)
         {
             return false;
         }
-        // math soman kina check korbo
-        else if(a.math_marks == b.math_marks)
+        // uporer konotai na hoile
+        else
         {
             // ekhon id er vitti te kaj korbo 
             if(a.id < b.id)
