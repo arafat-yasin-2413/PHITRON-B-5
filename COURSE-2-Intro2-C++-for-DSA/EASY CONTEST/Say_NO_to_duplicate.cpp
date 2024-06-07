@@ -24,25 +24,30 @@ int main()
         // }
         // cout << endl;
 
+        int second_last = 0;
         for (int i = 0; i < n - 1; i++)
         {
-            if (i == n - 2)
-            {
-                cout << ar[i] << " ";
-                if (ar[i] != ar[i + 1])
-                {
-                    cout << ar[i + 1] << " ";
-                    break;
-                }
-            }
             if (ar[i] == ar[i + 1])
             {
                 continue;
             }
+
             else if (ar[i] != ar[i + 1])
             {
-                cout << ar[i] << " ";
+                if (i == n - 2)
+                {
+                    cout << ar[i] << " ";
+                    second_last = ar[i];
+                }
+                else
+                {
+                    cout << ar[i] << " ";
+                }
             }
+        }
+        if (ar[n - 1] != second_last)
+        {
+            cout << ar[n - 1] << " ";
         }
         cout << endl;
     }
