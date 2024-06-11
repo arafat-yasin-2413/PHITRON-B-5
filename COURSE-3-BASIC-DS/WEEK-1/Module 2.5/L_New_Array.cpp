@@ -5,21 +5,23 @@ void fun(vector<int> &vec1, vector<int> &vec2)
 {
     vector<int> C;
 
-    for (int val : vec2)
-    {
-        C.push_back(val);
-    }
-
-    for (int val : vec1)
-    {
-        C.push_back(val);
-    }
-
+    C.insert(C.begin(),vec2.begin(),vec2.end());
+    C.insert(C.end(),vec1.begin(),vec1.end());
     for (int val : C)
     {
-        cout << val << " ";
+        cout<<val<<" ";
     }
-    cout << endl;
+
+    // for (int val : vec1)
+    // {
+    //     C.push_back(val);
+    // }
+
+    // for (int val : C)
+    // {
+    //     cout << val << " ";
+    // }
+    // cout << endl;
 }
 
 int main()

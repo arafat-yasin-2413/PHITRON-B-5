@@ -12,9 +12,11 @@ int main()
         cin >> v[i];
     }
 
-    for (int i = v.size() - 1; i >= 0; i--)
+    reverse(v.begin(), v.end());
+
+    for (int val : v)
     {
-        cout << v[i] << " ";
+        cout << val << " ";
     }
     cout << endl;
 
